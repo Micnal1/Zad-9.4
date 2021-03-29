@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Komentarze</title>
+</head>
+<body>
+<h1>Komentrze</h1>
+
+<h3>Napis komentarz</h3>
+<form method="post" action="/films/{{film_id}}/comments">
+    {{form.login.label}}
+    {{form.login}}
+    {{form.comment.label}}
+    {{form.comment}}
+<input type="submit" value="wyślij">
+
+</body>
+</html>

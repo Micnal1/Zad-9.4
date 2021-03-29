@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{film['title']}}</title>
+</head>
+<body>
+<h1>{{film['title']}}</h1>
+<h2>{{film['description']}}</h2>
+
+<h3>Edytuj</h3>
+<form method="post" action="/films/{{film_id}}">
+    {{ form.hidden_tag() }}
+    {{form.title.label}}
+    {{form.title}}
+    {{form.description.label}}
+    {{form.description}}
+<input type="submit" value="Edytuj">
+</form>
+
+<h3>Komentarze:</h3>
+<ul>
+    {%for comment in comments%}
+    <li>{{comment['login']}}:
+        {{comment['comment']}}</li>
+    {% endfor %}
+</ul>
+
+<p><a href="/films/{{film_id}}/comments">Napisz komentarz.</a></p>
+
+<button>
+    <a href="/films/{{film_id}}/delete">Usuń film</a>
+</button>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Filmy</title>
+    <h1>Biblioteka filmów</h1>
+</head>
+<body>
+<ul>
+    {%for film in films%}
+    <li><a href="/films/{{loop.index}}">{{film["title"]}}</a></li>
+    {% endfor %}
+</ul>
+
+<h2>Dodaj nowy film:</h2>
+<form method="post" action="/films/">
+    {{ form.hidden_tag() }}
+    {{form.title.label}}
+    {{form.title}}
+    {{form.description.label}}
+    {{form.description}}
+    <input type="submit" value="GO">
+</form>
+
+</body>
+</html>
